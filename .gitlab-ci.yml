@@ -1,12 +1,9 @@
-#CI for test task from DoctorWeb
 stages:
-    - build
-    - deploy
+    - compile
     
-#Build from source files <<epm>> ----->>> with help Dockerfile
-build:
+compile:
   image: docker:latest
-  stage: build
+  stage: compile
   services:
     - docker:dind
   before_script:
@@ -16,12 +13,3 @@ build:
     - docker push "$CI_REGISTRY_IMAGE"
   only:
     - master
-
-#Deploy ready application from DockerHub
-deploy:
-  image: docker:latest
-  stage: deploy
-  services:
-    - docker:dind
-  script:
-     - docker run skensel/epm
