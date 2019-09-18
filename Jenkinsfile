@@ -2,7 +2,7 @@
 pipeline {
     agent {
         docker {
-            image 'frolvlad/alpine-gcc'
+            image 'gcc'
         }
     }
 
