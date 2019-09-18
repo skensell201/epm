@@ -13,3 +13,4 @@ pipeline {
                     sh 'make install'
                 }
             }
+          }
