@@ -17,7 +17,7 @@ pipeline {
 
             stage('Test') {
                 steps {
-                    apt-cache policy epm | grep Installed
+                    sh 'apt-cache policy epm | grep Installed'
                     }
                     }
           }
