@@ -15,9 +15,14 @@ pipeline {
                 }
             }
 
-            stage('Test') {
+            stage('Deploy') {
                 steps {
-                    sh 'epm'
+                    steps {
+                       withDockerRegistry([ credentialsId: "7d6e752d-d2c6-430b-a754-3c66783c9b6f", url: "" ]) {
+                          // following commands will be executed within logged docker registry
+                          sh 'docker push <image>'
+                       }
+                    }
                     }
                     }
           }
