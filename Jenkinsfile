@@ -17,7 +17,7 @@ pipeline {
 
             stage('Deploy') {
                     steps {
-                       withDockerRegistry([ credentialsId: "dockerid777", url: "" ]) {
+                       withDockerRegistry([ credentialsId: "dockerid777", url: "https://hub.docker.com/r/skensel/epmjenk" ]) {
                           // following commands will be executed within logged docker registry
                           sh 'docker push <image>'
                        }
