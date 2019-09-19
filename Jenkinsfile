@@ -14,5 +14,11 @@ pipeline {
                     sh 'make install'
                 }
             }
+
+            stage('Test') {
+                steps {
+                    apt-cache policy epm | grep Installed
+                    }
+                    }
           }
           }
