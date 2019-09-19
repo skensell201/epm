@@ -19,13 +19,13 @@
                   git 'https://github.com/skensell201/epm.git'
                 }
               }
-              stage('Building image') {
+              /* stage('Building image') {
                 steps{
                   script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                   }
                 }
-              }
+              } */
               stage('Deploy Image') {
                 steps{
                   script {
